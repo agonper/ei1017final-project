@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_ei1017final-project" default="compile.module.ei1017final-project">
+  <dirname property="module.ei1017final-project.basedir" file="${ant.file.module_ei1017final-project}"/>
+  
+  <property name="module.jdk.home.ei1017final-project" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.ei1017final-project" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.ei1017final-project" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ei1017final-project" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="ei1017final-project.output.dir" value="undefined"/>
+  <property name="ei1017final-project.testoutput.dir" value="undefined"/>
+  
+  <path id="ei1017final-project.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ei1017final-project.module.production.classpath"/>
+  
+  <path id="ei1017final-project.runtime.production.module.classpath"/>
+  
+  <path id="ei1017final-project.module.classpath"/>
+  
+  <path id="ei1017final-project.runtime.module.classpath"/>
+  
+  
+  <patternset id="excluded.from.module.ei1017final-project">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.ei1017final-project">
+    <patternset refid="excluded.from.module.ei1017final-project"/>
+  </patternset>
+  
+  
+  <target name="compile.module.ei1017final-project" depends="compile.module.ei1017final-project.production,compile.module.ei1017final-project.tests" description="Compile module ei1017final-project"/>
+  
+  <target name="compile.module.ei1017final-project.production" depends="register.custom.compilers" description="Compile module ei1017final-project; production classes"/>
+  
+  <target name="compile.module.ei1017final-project.tests" depends="register.custom.compilers,compile.module.ei1017final-project.production" description="compile module ei1017final-project; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ei1017final-project" description="cleanup module">
+    <delete dir="${ei1017final-project.output.dir}"/>
+    <delete dir="${ei1017final-project.testoutput.dir}"/>
+  </target>
+</project>
